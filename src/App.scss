@@ -1,0 +1,26 @@
+#root {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.square {
+  aspect-ratio: 1 / 1;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 0 0 20px 0;
+}
+
+.answers {
+  display: flex;
+  gap: 1rem;
+}
