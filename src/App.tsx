@@ -5,6 +5,7 @@ const App = () => {
   const [color, setColor] = useState<string>("");
   const [answers, setAnswers] = useState<string[]>([]);
   const [wrong, setWrong] = useState<boolean>(false);
+  const [correct, setCorrect] = useState<boolean>(false);
 
   const getRandomColor = () => {
     const digits = [
@@ -49,10 +50,12 @@ const App = () => {
     if (answer === color) {
       // correct
       setWrong(false);
+      setCorrect(true);
       generateColors();
     } else {
       // wrong
       setWrong(true);
+      setCorrect(false);
     }
   };
 
@@ -62,7 +65,13 @@ const App = () => {
 
   return (
     <>
-      {wrong ? <h2>❌ Wrong!</h2> : <h2>⁉️ Color Quiz</h2>}
+      {wrong ? (
+        <h2>❌ Wrong!</h2>
+      ) : correct ? (
+        <h2>✅ Correct!</h2>
+      ) : (
+        <h2>⁉️ Color Quiz</h2>
+      )}
       <div className="square" style={{ background: color }}>
         <p>Guess me.</p>
       </div>
